@@ -22,13 +22,13 @@ $breakpoints-down: (
 ) !default;
 
 // Spacing
-$spacing-outer: 1.7rem;
-$spacing-outer--small: ($spacing-outer / 2);
-$spacing-outer--large: ($spacing-outer * 2);
+$spacing-outer: 1.7rem !default;
+$spacing-outer--small: ($spacing-outer / 2) !default;
+$spacing-outer--large: ($spacing-outer * 2) !default;
 
-$spacing-inner: 1.0em;
-$spacing-inner--small: ($spacing-inner / 2);
-$spacing-inner--large: ($spacing-inner * 2);
+$spacing-inner: 1.0em !default;
+$spacing-inner--small: ($spacing-inner / 2) !default;
+$spacing-inner--large: ($spacing-inner * 2) !default;
 
 // Round
-$radius: 3px;
+$radius: 3px !default;

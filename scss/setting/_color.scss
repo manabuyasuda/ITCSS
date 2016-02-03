@@ -1,0 +1,32 @@
+// -----------------------------------------------------------------
+// #Color
+// -----------------------------------------------------------------
+
+//
+// プロジェクトで繰り返し使用される色を変数として定義します。
+//
+
+// ベース
+$color-text: #333;
+$color-bg: #fff;
+
+// アンカータグ
+$color-link: #2b70ba;
+
+// コンポーネントのベースカラー
+$color-ui-border: #666;
+$color-ui-bg: #fff;
+
+// コンポーネントのカラーバリエーション
+$color-neutral-text: #47525d;
+$color-neutral-border: darken(#f7f9fa, 5%);
+$color-neutral-bg: #f7f9fa;
+$color-success-text: #2c683f;
+$color-success-border: darken(#edfaf1, 5%);
+$color-success-bg: #edfaf1;
+$color-warning-text: #996e00;
+$color-warning-border: darken(#fffdec, 5%);
+$color-warning-bg: #fffdec;
+$color-error-text: #921515;
+$color-error-border: darken(#ffe3e3, 5%);
+$color-error-bg: #ffe3e3;

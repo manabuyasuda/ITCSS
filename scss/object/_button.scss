@@ -1,0 +1,61 @@
+/* -----------------------------------------------------------------
+   #Button
+   -------------------------------------------------------------- */
+/**
+ * 装飾のないボタンオブジェクトです。
+ */
+$button-pill-base: 0 !default;
+$button-pill-round: 3em !default;
+
+.c-btn {
+  display: inline-block;
+  margin: 0;
+  padding: 0.75em;
+  border: none;
+  border-radius: $radius;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  appearance: none;
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+  }
+  &.is-disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.c-btn--full {
+  width: 100%;
+}
+
+.c-btn--circle {
+  border-radius: 50%;
+}
+
+/**
+ * カプセル状の錠剤のような形をしたボタンコンポーネントです。
+ */
+ .c-btn--pill {
+  border-radius: $button-pill-round;
+}
+
+.c-btn--pill-right {
+  border-radius: $button-pill-base $button-pill-round $button-pill-round $button-pill-base;
+}
+
+.c-btn--pill-center {
+  border-radius: $button-pill-base;
+}
+
+.c-btn--pill-left {
+  border-radius: $button-pill-round $button-pill-base $button-pill-base $button-pill-round;
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ITCSS",
+  "version": "0.0.0",
+  "description": "This is stylesheet based on ITCSS and FLOCSS",
+  "keywords": [
+    "css",
+    "scss",
+    "ITCSS",
+    "FLOCSS"
+  ],
+  "author": "Manabu Yasuda",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manabuyasuda/ITCSS.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/manabuyasuda/ITCSSissues"
+  },
+  "homepage": "https://github.com/manabuyasuda/ITCSS#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-csscomb": "^3.0.6",
+    "gulp-sass": "^2.1.0",
+    "gulp-sourcemaps": "^1.6.0"
+  }
+}

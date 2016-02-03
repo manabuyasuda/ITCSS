@@ -1,0 +1,20 @@
+/* -----------------------------------------------------------------
+   #Float
+   -------------------------------------------------------------- */
+.u-float-right {
+  float: right !important;
+}
+
+.u-float-left {
+  float: left !important;
+}
+
+.u-float-none {
+  float: none !important;
+}
+
+.u-clearfix:after {
+  content: "" !important;
+  display: table !important;
+  clear: both !important;
+}

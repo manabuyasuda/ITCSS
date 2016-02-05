@@ -1,20 +1,33 @@
-/* -----------------------------------------------------------------
+/* -----------------------------------------------------------------------------
    #Float
-   -------------------------------------------------------------- */
-.u-float-right {
-  float: right !important;
-}
-
-.u-float-left {
-  float: left !important;
-}
-
-.u-float-none {
-  float: none !important;
-}
-
+   -------------------------------------------------------------------------- */
 .u-clearfix:after {
   content: "" !important;
   display: table !important;
   clear: both !important;
+}
+
+// レスポンシブに対応した`float`プロパティを生成します。
+// @requires - $breakpoints
+@mixin float($breakpoint: null) {
+  .u-float-right#{$breakpoint} {
+    float: right !important;
+  }
+  .u-float-left#{$breakpoint} {
+    float: left !important;
+  }
+  .u-float-none#{$breakpoint} {
+    float: none !important;
+  }
+}
+
+// ブレイクポイントのないclassを生成します。
+@include float;
+
+// ブレイクポイント付きのclassを生成します。
+// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
+@each $name, $breakpoint in $breakpoints {
+  @media #{$breakpoint} {
+    @include float(-#{$name});
+  }
 }

@@ -1,22 +1,24 @@
-/* -----------------------------------------------------------------
+/* -----------------------------------------------------------------------------
    #Badge
-   -------------------------------------------------------------- */
-
+   -------------------------------------------------------------------------- */
 /**
  * 投稿数のような数値を表示するバッジコンポーネントです。
  *
  * <span class="c-badge"></span>
  */
+$badge-size: 2em;
+
 .c-badge {
   display: inline-block;
-  min-width: 1em;
-  padding: ($spacing-inner--small / 2) $spacing-inner--small;
-  border-radius: 1em;
+  min-width: $badge-size;
+  min-height: $badge-size;
+  padding: ($badge-size / 4) 0;
+  border-radius: 50%;
   color: $color-ui-bg;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 1;
-  white-space: nowrap;
-  vertical-align: center;
   text-align: center;
+  vertical-align: top;
+  white-space: nowrap;
   background-color: $color-link;
 }

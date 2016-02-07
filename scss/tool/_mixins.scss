@@ -106,7 +106,7 @@
   margin-left: 1em;
   vertical-align: middle;
   background-color: transparent;
-  transition: transform, ease-in, 0.3s;
+  transition: all, ease-in, 0.3s;
   &[class*="is-"] {
     transform: rotate(90deg);
   }
@@ -124,12 +124,16 @@
     box-shadow: inset 0 0 0 $weight $color;
   }
   &:before {
-    top: (($weight / 3) * 2);
     transform: rotate(45deg);
+    @if $weight > 2px {
+      top: (($weight / 3) * 2);
+    }
   }
   &:after {
-    bottom: (($weight / 3) * 2);
     transform: rotate(-45deg);
+    @if $weight > 2px {
+      bottom: (($weight / 3) * 2);
+    }
   }
 }
 

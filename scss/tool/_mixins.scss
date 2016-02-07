@@ -157,7 +157,6 @@
   background-color: transparent;
   cursor: pointer;
   transition: all, ease-out, 0.3s;
-  outline: 0;
   &:before,
   &:after {
     content: "";
@@ -176,5 +175,43 @@
     &:after {
       transform: rotate(-45deg);
     }
+  }
+}
+
+// @desc - クローズボタン（x）を生成します。
+// @prop - `$weight`は太さを定義します。
+// @example html - Usage
+// <button class="close">
+//   <span class="sr-only">画面を閉じる</span>
+// </button>
+//
+// @example scss - Usage
+// .close {
+//   @include close;
+// }
+// .sr-only {
+//   @include sr-only;
+// }
+@mixin close($color: #333, $width: 30px, $height: 22px, $weight: 3px) {
+  position: relative;
+  width: $width;
+  height: $height;
+  border: 0;
+  vertical-align: middle;
+  background-color: transparent;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    border-bottom: $weight solid $color;
+  }
+  &:before {
+    transform: rotate(45deg);
+  }
+  &:after {
+    transform: rotate(-45deg);
   }
 }

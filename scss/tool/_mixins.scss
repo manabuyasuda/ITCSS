@@ -97,15 +97,18 @@
 }
 
 // @desc - キャレット（<）を生成します。
-// @prop - `$width`は長さ、`$weight`は太さを定義します。
-@mixin caret($color: #333, $width: 10px, $weight: 2px) {
+// @prop - `$size`は長さ、`$weight`は太さを定義します。
+@mixin caret($color: #333, $size: 10px, $weight: 2px) {
   display: inline-block;
   position: relative;
-  width: $width;
-  height: 1em;
-  margin-left: 1em;
+  width: $size;
+  height: ($size * 2);
+  border: 0;
+  padding: 0;
+  text-align: left;
   vertical-align: middle;
   background-color: transparent;
+  outline: none;
   transition: all, ease-in, 0.3s;
   &[class*="is-"] {
     transform: rotate(90deg);
@@ -115,9 +118,9 @@
     content: "";
     position: absolute;
     top: 0;
-    right: $weight;
+    right: $size;
     bottom: 0;
-    width: ($width + $weight);
+    width: ($size + $weight);
     height: $weight;
     margin: auto 0;
     transform-origin: right;
@@ -160,6 +163,7 @@
   border-bottom: $weight solid $color;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
   transition: all, ease-out, 0.3s;
   &:before,
   &:after {
@@ -204,6 +208,7 @@
   vertical-align: middle;
   background-color: transparent;
   cursor: pointer;
+  outline: none;
   &:before,
   &:after {
     content: "";

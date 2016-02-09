@@ -104,8 +104,10 @@
   width: $width;
   height: 1em;
   margin-left: 1em;
+  border: none;
   vertical-align: middle;
   background-color: transparent;
+  outline: none;
   transition: all, ease-in, 0.3s;
   &[class*="is-"] {
     transform: rotate(90deg);

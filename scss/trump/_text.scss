@@ -48,13 +48,13 @@
 }
 
 /* すべての英単語を小文字にします。 */
-.u-text-uppercase {
-  text-transform: uppercase !important;
+.u-text-lowercase {
+  text-transform: lowercase !important;
 }
 
 /* すべての英単語を大文字にします。 */
-.u-text-lowercase {
-  text-transform: lowercase !important;
+.u-text-uppercase {
+  text-transform: uppercase !important;
 }
 
 /* 英単語の先頭を大文字にします。 */

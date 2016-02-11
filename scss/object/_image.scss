@@ -61,26 +61,37 @@ $image-margin: $spacing-inner !default;
 
 /**
  * 背景画像をフルードイメージのように可変させます。
- * 画像のURLとアスペクト比を指定するクラスを追加します。
+ * 背景画像のURLとアスペクト比を指定するクラスを追加します。
+ * 入れ子になる要素を中央配置にする場合は`.o-central`オブジェクトを追加します。
  *
- * <div class="o-image-contain c-image-example"></div>
+ * <div class="o-image-fluid c-image-example　o-central">
+ *   <div class="o-central__item"></div>
+ * </div>
  *
  * .c-image-example {
- *     // 表示画像の高さ ÷ 表示画像の幅 × 100%
- *     padding-top: (1000 / 400) * 100%;
- *     background-image: url("http://lorempixel.com/1000/400/");
+ *   // 表示画像の高さ ÷ 表示画像の幅 × 100%
+ *   padding-top: percentage(300 / 1200); // Sassを使用している場合
+ *   background-image: url("http://lorempixel.com/1200/300/");
+ *   @include media-query(md) {
+ *     // グリッドレイアウトで高さを揃えて横並びにする場合は、大きく表示される方のアスペクト比を指定、
+ *     // その値を、いちばん大きいカラム数 ÷ この要素のカラム数で割る（以下は8/12と4/12で指定している場合）。
+ }     // この場合、小さい方の画像はトリミングされます。
+ *     padding-top: percentage(1000 / 400) / (8 / 4);
+ *     // 背景画像の起点を変える場合は`background-position`プロパティを上書きします（以下は左端から100%、上端から50%を基準にする）。
+ *     background-position: 100% 50%;
+ *   }
  * }
  */
-.o-image-contain {
+.o-image-fluid {
   height: 0;
   background-color: inherit;
   background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: contain;
+  background-position: center center;
+  background-size: cover;
 }
 
 /**
- * 背景画像の上に透過された黒いレイヤーを覆います。
+ * 背景画像の上に透過されたレイヤーを覆います。
  * モディファイアで背景色を指定します。
  * elementを指定しないと、うまく表示、選択できなくなるので注意してください。
  *

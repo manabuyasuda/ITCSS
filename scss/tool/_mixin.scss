@@ -54,7 +54,7 @@
 //   }
 // }
 @mixin media-query($breakpoint) {
-  @if $breakpoint == 'x2' {
+  @if $breakpoint == "x2" {
     @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
       @content;
     }
@@ -80,6 +80,37 @@
   } @else {
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
     + "Please make sure it is defined in `$breakpoints-down` map.";
+  }
+}
+
+// @desc - class名とルールセットを指定することで、レスポンシブに対応したスタイルを生成します。
+// @prop - 共通のclass名をクウォートとドットをつけて渡します（e.g. `.foo`）。
+// @prop - セパレーターを渡します。\@のようにエスケープしている場合はクウォートは不要です。
+// @see - $breakpoints
+// @example scss - Usage
+// @include responsive(".foo") {
+//   display: none;
+// }
+//
+// @example css - CSS output
+// .foo {
+//   display: none;
+// }
+// @media screen and (min-width: 400px) {
+//   .foo-sm {
+//     display: none;
+//   }
+// }
+@mixin responsive($class, $sep: "-") {
+  #{$class} {
+    @content;
+  }
+  @each $suffix, $value in $breakpoints {
+    @media #{$value} {
+      #{$class}#{$sep}#{$suffix} {
+        @content;
+      }
+    }
   }
 }
 

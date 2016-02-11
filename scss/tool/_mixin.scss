@@ -54,7 +54,12 @@
 //   }
 // }
 @mixin media-query($breakpoint) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if $breakpoint == 'x2' {
+    @media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+      @content;
+    }
+  }
+  @else if map-has-key($breakpoints, $breakpoint) {
     @media #{inspect(map-get($breakpoints, $breakpoint))} {
       @content;
     }

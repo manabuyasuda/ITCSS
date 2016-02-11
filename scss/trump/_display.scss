@@ -1,30 +1,18 @@
 /* -----------------------------------------------------------------------------
    #Display
    -------------------------------------------------------------------------- */
-// レスポンシブに対応した`display`プロパティを生成します。
-// @requires - $breakpoints
-@mixin display($breakpoint: null) {
-  .u-display-none#{$breakpoint} {
-    display: none !important;
-  }
-  .u-display-block#{$breakpoint} {
-    display: block !important;
-  }
-  .u-display-inline#{$breakpoint} {
-    display: inline !important;
-  }
-  .u-display-inline-block#{$breakpoint} {
-    display: inline-block !important;
-  }
+@include responsive(".u-display-none") {
+  display: none !important;
 }
 
-// ブレイクポイントのないclassを生成します。
-@include display;
+@include responsive(".u-display-block") {
+  display: block !important;
+}
 
-// ブレイクポイント付きのclassを生成します。
-// @requires {Map} $breakpoints - ブレイクポイントを定義しています。
-@each $name, $breakpoint in $breakpoints {
-  @media #{$breakpoint} {
-    @include display(-#{$name});
-  }
+@include responsive(".u-display-inline") {
+  display: inline !important;
+}
+
+@include responsive(".u-display-inline-block") {
+  display: inline-block !important;
 }

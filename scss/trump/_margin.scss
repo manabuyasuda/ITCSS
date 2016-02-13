@@ -8,37 +8,35 @@
  * x, y - top and bottom, right and left
  * 0, s, m, l - zero, small, medium, large
  */
-$margin-small: $spacing-outer--small;
-$margin-medium: $spacing-outer;
-$margin-large: $spacing-outer--large;
+$margin-value: (
+  '0': 0,
+  's': $spacing-outer--small,
+  'm': $spacing-outer,
+  'l': $spacing-outer--large,
+) !default;
 
-@mixin margin($name, $value) {
-  .u-ma-#{$name} {
+@each $name, $value in $margin-value {
+  @include responsive(".u-ma#{$name}") {
     margin: $value !important;
   }
-  .u-mt-#{$name} {
+  @include responsive(".u-mt#{$name}") {
     margin-top: $value !important;
   }
-  .u-mr-#{$name} {
+  @include responsive(".u-mr#{$name}") {
     margin-right: $value !important;
   }
-  .u-mb-#{$name} {
+  @include responsive(".u-mb#{$name}") {
     margin-bottom: $value !important;
   }
-  .u-ml-#{$name} {
+  @include responsive(".u-ml#{$name}") {
     margin-left: $value !important;
   }
-  .u-my-#{$name} {
+  @include responsive(".u-my#{$name}") {
     margin-top: $value !important;
     margin-bottom: $value !important;
   }
-  .u-mx-#{$name} {
+  @include responsive(".u-mx#{$name}") {
     margin-right: $value !important;
     margin-left: $value !important;
   }
 }
-
-@include margin(0, 0);
-@include margin(s, $margin-small);
-@include margin(m, $margin-medium);
-@include margin(l, $margin-large);

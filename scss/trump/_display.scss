@@ -1,18 +1,18 @@
 /* -----------------------------------------------------------------------------
    #Display
    -------------------------------------------------------------------------- */
-@include responsive(".u-display-none") {
+@include responsive(".u-dn") {
   display: none !important;
 }
 
-@include responsive(".u-display-block") {
+@include responsive(".u-db") {
   display: block !important;
 }
 
-@include responsive(".u-display-inline") {
+@include responsive(".u-di") {
   display: inline !important;
 }
 
-@include responsive(".u-display-inline-block") {
+@include responsive(".u-dib") {
   display: inline-block !important;
 }

@@ -1,20 +1,18 @@
 /* -----------------------------------------------------------------------------
    #Float
    -------------------------------------------------------------------------- */
-.u-clearfix:after {
-  content: "" !important;
-  display: table !important;
-  clear: both !important;
+.u-cf {
+  @include clearfix(important);
 }
 
-@include responsive(".u-float-right") {
+@include responsive(".u-fr") {
   float: right !important;
 }
 
-@include responsive(".u-float-left") {
+@include responsive(".u-fl") {
   float: left !important;
 }
 
-@include responsive(".u-float-none") {
+@include responsive(".u-fn") {
   float: none !important;
 }

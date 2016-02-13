@@ -85,7 +85,7 @@
 
 // @desc - class名とルールセットを指定することで、レスポンシブに対応したスタイルを生成します。
 // @prop - 共通のclass名をクウォートとドットをつけて渡します（e.g. `.foo`）。
-// @prop - セパレーターを渡します。\@のようにエスケープしている場合はクウォートは不要です。
+// @prop - ブレイクポイントを定義したmapを渡します。
 // @see - $breakpoints
 // @example scss - Usage
 // @include responsive(".foo") {
@@ -101,13 +101,13 @@
 //     display: none;
 //   }
 // }
-@mixin responsive($class, $sep: "-") {
+@mixin responsive($class, $bp: $breakpoints) {
   #{$class} {
     @content;
   }
-  @each $suffix, $value in $breakpoints {
+  @each $suffix, $value in $bp {
     @media #{$value} {
-      #{$class}#{$sep}#{$suffix} {
+      #{$class}-#{$suffix} {
         @content;
       }
     }

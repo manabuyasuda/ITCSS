@@ -44,6 +44,7 @@ $media-gutter-large: ($media-gutter * 2) !default;
 
 .o-media__item > img {
   display: block;
+  max-width: none;
 }
 
 .o-media--middle {
@@ -60,7 +61,6 @@ $media-gutter-large: ($media-gutter * 2) !default;
 
 .o-media--rev {
   text-align: left;
-
   direction: rtl;
   > .o-media__item {
     text-align: left;

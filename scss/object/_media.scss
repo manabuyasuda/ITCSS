@@ -21,13 +21,13 @@ $media-gutter-large: ($media-gutter * 2) !default;
 
 .o-media {
   display: table;
+  width: 100%;
   margin: 0;
   padding: 0;
 }
 
 .o-media__item {
   display: table-cell;
-  width: 100%;
   margin: 0;
   padding: 0;
   vertical-align: top;
